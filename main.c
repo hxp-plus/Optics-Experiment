@@ -15,6 +15,9 @@ int main() {
     sprintf(pdf_filename, "%s%s", WORKDIR, PDF_FILE_NAME);
     generate_header(tex_filename);
 
+    create_table_current_mfield(tex_filename);
+    fill_table_current_mfield("../data/analyzer_angle_light_intensity_1.csv", tex_filename);
+
     create_table_analyzer_angle_light_intensity(tex_filename);
     fill_table_analyzer_angle_light_intensity("../data/analyzer_angle_light_intensity_1.csv", tex_filename);
     insert_plot(PLOT_SCRIPT_PATH, "analyzer-angle-light-intensity-1.gnuplot", tex_filename);
