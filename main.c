@@ -50,7 +50,7 @@ int main() {
         analyzer_angle_light_intensity(tex_filename, i);
     }
 
-    for (int i = 1; i <= 6; i++) {
+    for (int i = 1; i <= 8; i++) {
         led(tex_filename, i);
     }
 

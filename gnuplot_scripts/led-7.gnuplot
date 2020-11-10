@@ -1,0 +1,12 @@
+set datafile separator ',';
+set term eps;
+set output "../output/led-vc-7.gnuplot.eps";
+set ylabel "Current (Ampere)";
+set xlabel "Voltage (Volt)";
+set grid;
+plot '../data/led_7.csv' using 3:2 with linespoints notitle;
+set output "../output/led-pc-7.gnuplot.eps";
+set ylabel "Current (Ampere)";
+set xlabel "Power (Watt)";
+set grid;
+plot '../data/led_7.csv' using 4:2 with linespoints notitle;

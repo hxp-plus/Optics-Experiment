@@ -13,4 +13,6 @@ const char *get_field(char *line, int num);
 
 double *read_lines(char *filename, int line_start, int line_end, int column);
 
+char *read_lines_str(char *filename, int line, int column);
+
 #endif //SPECTROMETER_READCSV_H

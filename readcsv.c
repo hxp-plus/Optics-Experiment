@@ -33,3 +33,24 @@ double *read_lines(char *filename, int line_start, int line_end, int column) {
     fclose(data);
     return result;
 }
+
+char *read_lines_str(char *filename, int line, int column) {
+    FILE *data = fopen(filename, "r");
+    char fileline[1024];
+    char *result = malloc(sizeof(char) * 64);
+    int current_line = 0;
+    while (fgets(fileline, 1024, data)) {
+        if (current_line < line - 1) {
+            current_line++;
+            continue;
+        }
+        if (current_line > line - 1) {
+            break;
+        }
+        char *tmp = strdup(fileline);
+        result = get_field(tmp, column);
+        current_line++;
+    }
+    fclose(data);
+    return result;
+}
