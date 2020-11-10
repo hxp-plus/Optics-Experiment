@@ -43,8 +43,8 @@ cat >"light-intensity-analyzer-angle.gnuplot" <<EOF
 set datafile separator ',';
 set term eps;
 set output "../output/light-intensity-analyzer-angle.gnuplot.eps";
-set xlabel "Analyzer Angle (Degree)";
-set ylabel "Light Intensity (Ampere)";
+set ylabel "Faraday Angle (Degree)";
+set xlabel "Current (Ampere)";
 set grid;
-plot '../data/light_intensity_analyzer_angle.csv' using 1:2 with linespoints notitle;
+plot '../data/light_intensity_analyzer_angle.csv' using 1:3 with linespoints notitle;
 EOF

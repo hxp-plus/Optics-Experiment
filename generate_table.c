@@ -45,7 +45,7 @@ void fill_table_analyzer_angle_light_intensity(char *data_filename, char *tex_fi
 void fill_table_light_intensity_analyzer_angle(char *data_filename, char *tex_filename) {
     char *cmd = malloc(sizeof(char) * 256);
     const double *angle = read_lines(data_filename, 2, 16, 1);
-    const double *light_intensity = read_lines(data_filename, 2, 16, 2);
+    const double *light_intensity = read_lines(data_filename, 2, 16, 3);
     for (int i = 0; i < 15; i++) {
         sprintf(cmd, "sed -i s/p1%d/%.2f/ %s", i + 11, angle[i], tex_filename);
         system(cmd);
@@ -55,7 +55,14 @@ void fill_table_light_intensity_analyzer_angle(char *data_filename, char *tex_fi
         system(cmd);
     }
     for (int i = 0; i < 8; i++) {
-        sprintf(cmd, "sed -i s/p3%d/%.2f/ %s", i + 11, (light_intensity[i] + light_intensity[14 - i]) / 2.0,
+        double faraday_angle = light_intensity[i] - light_intensity[14 - i];
+        if (light_intensity[i] - light_intensity[14 - i] > 180) {
+            faraday_angle -= 360;
+        }
+        if (faraday_angle<0) {
+            faraday_angle = - faraday_angle;
+        }
+        sprintf(cmd, "sed -i s/p3%d/%.2f/ %s", i + 11, faraday_angle,
                 tex_filename);
         system(cmd);
     }
