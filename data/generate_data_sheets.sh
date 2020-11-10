@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1..16}; do
+for i in {1..2}; do
   if [[ ! -e "analyzer_angle_light_intensity_$i.csv" ]]; then
     cp "analyzer_angle_light_intensity_template.csv" "analyzer_angle_light_intensity_$i.csv"
   fi
