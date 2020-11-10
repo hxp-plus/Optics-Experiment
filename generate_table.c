@@ -55,7 +55,8 @@ void fill_table_light_intensity_analyzer_angle(char *data_filename, char *tex_fi
         system(cmd);
     }
     for (int i = 0; i < 8; i++) {
-        sprintf(cmd, "sed -i s/p3%d/%.2f/ %s", i + 11, (light_intensity[i]+light_intensity[14-i])/2.0, tex_filename);
+        sprintf(cmd, "sed -i s/p3%d/%.2f/ %s", i + 11, (light_intensity[i] + light_intensity[14 - i]) / 2.0,
+                tex_filename);
         system(cmd);
     }
 }
@@ -84,12 +85,11 @@ void create_table_led(char *filename) {
 
 void fill_table_led(char *data_filename, char *tex_filename) {
     char *cmd = malloc(sizeof(char) * 256);
-    char *color = malloc(sizeof(char) * 16);
     double temperature = read_lines(data_filename, 2, 2, 1)[0];
     const double *current = read_lines(data_filename, 2, 9, 2);
     const double *voltage = read_lines(data_filename, 2, 9, 3);
     const double *power = read_lines(data_filename, 2, 9, 4);
-    color=read_lines_str(data_filename,2,5);
+    char *color = read_lines_str(data_filename, 2, 5);
     sprintf(cmd, "sed -i s/p001/%s/ %s", color, tex_filename);
     system(cmd);
     sprintf(cmd, "sed -i s/p000/%.2f/ %s", temperature, tex_filename);
@@ -108,7 +108,7 @@ void fill_table_led(char *data_filename, char *tex_filename) {
     }
 }
 
-void insert_plot(char *plot_script_path, char *plot_script_name, char *tex_filename, char* figure_name) {
+void insert_plot(char *plot_script_path, char *plot_script_name, char *tex_filename, char *figure_name) {
     char *cmd = malloc(sizeof(char) * 256);
     sprintf(cmd, "gnuplot -p %s%s",
             plot_script_path,

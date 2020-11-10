@@ -39,8 +39,8 @@ void led(char *tex_filename, int num) {
     char *figure_pc_name = malloc(sizeof(char) * 128);
     sprintf(data_filename, "../data/led_%d.csv", num);
     sprintf(plot_script_name, "led-%d.gnuplot", num);
-    sprintf(figure_vc_name , "led-vc-%d.gnuplot", num);
-    sprintf(figure_pc_name , "led-pc-%d.gnuplot", num);
+    sprintf(figure_vc_name, "led-vc-%d.gnuplot", num);
+    sprintf(figure_pc_name, "led-pc-%d.gnuplot", num);
     fill_table_led(data_filename, tex_filename);
     insert_plot(PLOT_SCRIPT_PATH, plot_script_name, tex_filename, figure_vc_name);
     insert_plot(PLOT_SCRIPT_PATH, plot_script_name, tex_filename, figure_pc_name);
