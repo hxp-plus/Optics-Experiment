@@ -188,6 +188,46 @@ number={},                             % 设置序号为没有序号
 \newpage
 \begin{table}[H]
     \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        检偏镜角度(${}^{\circ}$)  & 0   & 10  & 20  & 30  & 40  & 50  & 60  & 70  & 80  \\\hline
+        光强($10^{-7} \si{A}$) & 44.00 & 18.35 & 4.82 & 7.37 & 25.70 & 58.10 & 101.20 & 150.70 & 196.40 \\\hline
+        检偏镜角度(${}^{\circ}$)  & 90  & 100 & 110 & 120 & 130 & 140 & 150 & 160 & 170 \\\hline
+        光强($10^{-7} \si{A}$) & 240.00 & 268.00 & 283.00 & 280.00 & 261.00 & 225.00 & 179.10 & 132.10 & 86.70 \\\hline
+        检偏镜角度(${}^{\circ}$)  & 180 & 190 & 200 & 210 & 220 & 230 & 240 & 250 & 260 \\\hline
+        光强($10^{-7} \si{A}$) & 48.20 & 18.29 & 4.34 & 7.48 & 26.10 & 59.30 & 100.30 & 141.50 & 190.10 \\\hline
+        检偏镜角度(${}^{\circ}$)  & 270 & 280 & 290 & 300 & 310 & 320 & 330 & 340 & 350 \\\hline
+        光强($10^{-7} \si{A}$) & 229.00 & 255.00 & 267.00 & 263.00 & 247.00 & 214.00 & 174.20 & 128.60 & 86.50 \\\hline
+    \end{tabular}
+    \caption{检偏器角度与光强关系，特定励磁电流$I=2.00 \si{A}$}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../output/analyzer-angle-light-intensity-3.gnuplot}
+\end{figure}
+\newpage
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        检偏镜角度(${}^{\circ}$)  & 0   & 10  & 20  & 30  & 40  & 50  & 60  & 70  & 80  \\\hline
+        光强($10^{-7} \si{A}$) & 4.55 & 17.82 & 46.30 & 85.40 & 131.50 & 180.50 & 227.00 & 262.00 & 282.00 \\\hline
+        检偏镜角度(${}^{\circ}$)  & 90  & 100 & 110 & 120 & 130 & 140 & 150 & 160 & 170 \\\hline
+        光强($10^{-7} \si{A}$) & 285.00 & 272.00 & 242.00 & 201.00 & 150.10 & 100.90 & 60.70 & 26.20 & 7.25 \\\hline
+        检偏镜角度(${}^{\circ}$)  & 180 & 190 & 200 & 210 & 220 & 230 & 240 & 250 & 260 \\\hline
+        光强($10^{-7} \si{A}$) & 4.24 & 15.33 & 45.10 & 85.30 & 130.60 & 176.60 & 218.00 & 250.00 & 267.00 \\\hline
+        检偏镜角度(${}^{\circ}$)  & 270 & 280 & 290 & 300 & 310 & 320 & 330 & 340 & 350 \\\hline
+        光强($10^{-7} \si{A}$) & 268.00 & 255.00 & 226.00 & 185.50 & 139.90 & 95.20 & 53.50 & 23.20 & 7.25 \\\hline
+    \end{tabular}
+    \caption{检偏器角度与光强关系，特定励磁电流$I=-2.00 \si{A}$}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../output/analyzer-angle-light-intensity-4.gnuplot}
+\end{figure}
+\newpage
+\begin{table}[H]
+    \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         \hline
         正向电流(A)  & 0.00 & 0.30 & 0.60 & 0.90 & 1.20 & 1.50  & 1.80  & 2.00 \\\hline
@@ -198,6 +238,10 @@ number={},                             % 设置序号为没有序号
     \end{tabular}
     \caption{检偏器角度与励磁电流关系}
 \end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../output/light-intensity-analyzer-angle.gnuplot}
+\end{figure}
 \newpage
 \begin{table}[H]
     \centering

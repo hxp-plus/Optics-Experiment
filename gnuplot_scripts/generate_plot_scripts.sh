@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1..2}; do
+for i in {1..4}; do
   cat >"analyzer-angle-light-intensity-$i.gnuplot" <<EOF
 set datafile separator ',';
 set term eps;
@@ -37,4 +37,14 @@ set xlabel "Analyzer Angle (Degree)";
 set ylabel "Light Intensity (Ampere)";
 set grid;
 plot '../data/current_mfield.csv' using 1:2 with linespoints notitle;
+EOF
+
+cat >"light-intensity-analyzer-angle.gnuplot" <<EOF
+set datafile separator ',';
+set term eps;
+set output "../output/light-intensity-analyzer-angle.gnuplot.eps";
+set xlabel "Analyzer Angle (Degree)";
+set ylabel "Light Intensity (Ampere)";
+set grid;
+plot '../data/light_intensity_analyzer_angle.csv' using 1:2 with linespoints notitle;
 EOF

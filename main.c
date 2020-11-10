@@ -27,6 +27,8 @@ void analyzer_angle_light_intensity(char *tex_filename, int num) {
 void light_intensity_analyzer_angle(char *tex_filename) {
     create_table_light_intensity_analyzer_angle(tex_filename);
     fill_table_light_intensity_analyzer_angle("../data/light_intensity_analyzer_angle.csv", tex_filename);
+    insert_plot(PLOT_SCRIPT_PATH, "light-intensity-analyzer-angle.gnuplot",
+                tex_filename, "light-intensity-analyzer-angle.gnuplot");
 }
 
 void led(char *tex_filename, int num) {
@@ -53,9 +55,10 @@ int main() {
     generate_header(tex_filename);
 
     current_mfield(tex_filename);
-    for (int i = 1; i <= 2; i++) {
+    for (int i = 1; i <= 4; i++) {
         analyzer_angle_light_intensity(tex_filename, i);
     }
+
     light_intensity_analyzer_angle(tex_filename);
 
     for (int i = 1; i <= 8; i++) {
