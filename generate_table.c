@@ -63,10 +63,13 @@ void fill_table_light_intensity_analyzer_angle(char *data_filename, char *tex_fi
 
 void fill_table_current_mfield(char *data_filename, char *tex_filename) {
     char *cmd = malloc(sizeof(char) * 256);
-    const double *light_intensity = read_lines(data_filename, 2, 17, 2);
+    const double *current = read_lines(data_filename, 2, 16, 1);
+    const double *light_intensity = read_lines(data_filename, 2, 16, 2);
     system(cmd);
-    for (int i = 0; i < 36; i++) {
-        sprintf(cmd, "sed -i s/p%d/%.2f/ %s", i + 11, light_intensity[i], tex_filename);
+    for (int i = 0; i < 15; i++) {
+        sprintf(cmd, "sed -i s/p1%d/%.2f/ %s", i + 11, current[i], tex_filename);
+        system(cmd);
+        sprintf(cmd, "sed -i s/p2%d/%.2f/ %s", i + 11, light_intensity[i], tex_filename);
         system(cmd);
     }
 }
