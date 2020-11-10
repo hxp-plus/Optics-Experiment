@@ -19,4 +19,9 @@ void create_table_led(char *filename);
 
 void fill_table_led(char *data_filename, char *tex_filename);
 
+void create_table_light_intensity_analyzer_angle(char *filename);
+
+
+void fill_table_light_intensity_analyzer_angle(char *data_filename, char *tex_filename);
+
 #endif //OPTICS_EXPERIMENT_GENERATE_TABLE_H
