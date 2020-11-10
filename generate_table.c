@@ -77,7 +77,7 @@ void fill_table_led(char *data_filename, char *tex_filename) {
     }
 }
 
-void insert_plot(char *plot_script_path, char *plot_script_name, char *tex_filename) {
+void insert_plot(char *plot_script_path, char *plot_script_name, char *tex_filename, char* figure_name) {
     char *cmd = malloc(sizeof(char) * 256);
     sprintf(cmd, "gnuplot -p %s%s",
             plot_script_path,
@@ -88,7 +88,7 @@ void insert_plot(char *plot_script_path, char *plot_script_name, char *tex_filen
             tex_filename);
     system(cmd);
     sprintf(cmd, "sed -i s/path.pdf/%s/ %s",
-            plot_script_name,
+            figure_name,
             tex_filename);
     system(cmd);
 }
