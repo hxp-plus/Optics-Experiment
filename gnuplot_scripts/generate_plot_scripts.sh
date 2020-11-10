@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for i in {1..16};do
-cat > "analyzer-angle-light-intensity-$i.gnuplot" << EOF
+for i in {1..16}; do
+  cat >"analyzer-angle-light-intensity-$i.gnuplot" <<EOF
 set datafile separator ',';
 set term eps;
 set output "../output/analyzer-angle-light-intensity-$i.gnuplot.eps";

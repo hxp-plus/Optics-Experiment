@@ -13,7 +13,7 @@ const char *get_field(char *line, int num) {
     return NULL;
 }
 
-double *read_lines(char* filename, int line_start, int line_end, int column) {
+double *read_lines(char *filename, int line_start, int line_end, int column) {
     FILE *data = fopen(filename, "r");
     char line[1024];
     double *result = malloc(sizeof(double) * (line_end - line_start + 1));

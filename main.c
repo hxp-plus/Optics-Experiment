@@ -14,12 +14,22 @@ void current_mfield(char *tex_filename) {
 
 void analyzer_angle_light_intensity(char *tex_filename, int num) {
     create_table_analyzer_angle_light_intensity(tex_filename);
-    char* data_filename = malloc(sizeof(char)*128);
-    char* plot_script_name = malloc(sizeof(char)*128);
+    char *data_filename = malloc(sizeof(char) * 128);
+    char *plot_script_name = malloc(sizeof(char) * 128);
     sprintf(data_filename, "../data/analyzer_angle_light_intensity_%d.csv", num);
     sprintf(plot_script_name, "analyzer-angle-light-intensity-%d.gnuplot", num);
     fill_table_analyzer_angle_light_intensity(data_filename, tex_filename);
     insert_plot(PLOT_SCRIPT_PATH, plot_script_name, tex_filename);
+}
+
+void led(char *tex_filename, int num) {
+    create_table_led(tex_filename);
+    char *data_filename = malloc(sizeof(char) * 128);
+    char *plot_script_name = malloc(sizeof(char) * 128);
+    sprintf(data_filename, "../data/led_%d.csv", num);
+    sprintf(plot_script_name, "led-%d.gnuplot", num);
+    fill_table_led(data_filename, tex_filename);
+//    insert_plot(PLOT_SCRIPT_PATH, plot_script_name, tex_filename);
 }
 
 int main() {
@@ -31,8 +41,12 @@ int main() {
     generate_header(tex_filename);
 
     current_mfield(tex_filename);
-    for (int i=1;i<=16; i++) {
+    for (int i = 1; i <= 16; i++) {
         analyzer_angle_light_intensity(tex_filename, i);
+    }
+
+    for (int i = 1; i <= 6; i++) {
+        led(tex_filename, i);
     }
 
     generate_footer(tex_filename);
