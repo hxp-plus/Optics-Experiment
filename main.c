@@ -31,7 +31,7 @@ int main() {
     generate_header(tex_filename);
 
     current_mfield(tex_filename);
-    for (int i=1;i<=8; i++) {
+    for (int i=1;i<=16; i++) {
         analyzer_angle_light_intensity(tex_filename, i);
     }
 
