@@ -62,6 +62,7 @@ void fill_table_light_intensity_analyzer_angle(char *data_filename, char *tex_fi
         if (faraday_angle<0) {
             faraday_angle = - faraday_angle;
         }
+        faraday_angle = faraday_angle/2.0;
         sprintf(cmd, "sed -i s/p3%d/%.2f/ %s", i + 11, faraday_angle,
                 tex_filename);
         system(cmd);

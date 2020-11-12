@@ -1,7 +1,13 @@
 set datafile separator ',';
 set term eps;
 set output "../output/current-mfield.gnuplot.eps";
-set xlabel "Analyzer Angle (Degree)";
-set ylabel "Light Intensity (Ampere)";
+set xlabel "Current (Ampere)";
+set ylabel "Magnetic induction (Milli Tesla)";
+set grid;
+plot '../data/current_mfield.csv' using 1:2 with linespoints notitle;
+set terminal png size 640,480;
+set output "../output/current-mfield.gnuplot.png";
+set xlabel "Current (Ampere)";
+set ylabel "Magnetic induction (Milli Tesla)";
 set grid;
 plot '../data/current_mfield.csv' using 1:2 with linespoints notitle;
